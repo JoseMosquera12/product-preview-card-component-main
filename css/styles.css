@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Dark-cyan-blue: rgba(26, 64, 49, 1); 
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --fuente-principal: 'Montserrat', 'sans-serif';
+    --fuente-secundaria: 'Fraunces', 'Sans-serif';
+}
+
+/* Estilos para el Scrollbar */
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--Dark-grayish-blue);
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--White);
+    border-radius: 8px;
+}
+
+/* Estilos globales */
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--Cream);
+    font-size: 14px;
+}
+
+h2 {
+    margin: 1rem 0;
+    font-size: 3rem;
+}
+
+p {
+    margin: .6rem 0 ;
+}
+
+
+a {
+     text-decoration: none;
+}
+
+/* Estilos de menu del navegacion */
+.navegacion {
+    width: 100%;
+    background-color: var(--Dark-cyan);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem;
+}
+
+header nav a:hover::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--White);
+    position: absolute;
+    bottom: 0;
+    animation-name: border-width;
+    animation-duration: 1s;
+}
+
+@keyframes border-width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%
+    }
+}
+
+.login, header nav a {
+    font-size: .9rem;
+    color: white;
+    padding: .8rem;
+    font-weight: bold;
+    position: relative;
+
+}
+
+.navegacion__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 8.5rem;
+    justify-content: space-between;
+    color: #fff;    
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header img {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    width: 28rem;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.login {
+    padding: 1rem 2rem;
+    background-color: #fff;
+    color: #000;
+    border-radius: 12px;
+    margin-right: 1.5rem;
+}
+
+/* Estilos para la carta */
+
+.card-container {
+    width: 52rem;
+    height: 40rem;
+    margin: 10% auto;
+    background-color: var(--White);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+@media (max-width: 800px) {
+    
+    .card-container {
+        margin-top: 10rem;
+        width: 40rem;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1f);
+    }
+    
+    .card-container__img{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    
+    .card-container-content {
+        grid-column: 1/2;
+        grid-row: 2/4;
+    }
+
+}
+
+.card-container-content {
+    padding: 3rem 2rem 2rem;
+}
+
+.card-container__img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-container-content__categoria {
+    color: var(--Dark-grayish-blue);
+    font-size: 1.4rem;
+    letter-spacing: .4rem;
+}
+
+.precio-principal, .card-container-content__categoria {
+    color: var(--Dark-cyan);
+}
+
+.card-container-description {
+    color: var(--Dark-grayish-blue);
+    line-height: 2;
+    font-size: 1.15rem;
+}
+
+.precio {
+    display: flex;
+    width: 10rem;
+    justify-content: space-between;
+    width: 12rem;
+}
+
+.precio-principal {
+    font-size: 2rem;
+    font-family: var(--fuente-secundaria);
+}
+
+.precio-descuento {
+    text-decoration: line-through;
+    color: var(--Dark-grayish-blue);
+}
+
+.button-cart {
+    background-color: var(--Dark-cyan);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 0;
+    color: var(--White);
+    font-family: var(--fuente-principal);
+    margin: 2rem 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.button-cart:hover{
+    background-color: var(--Dark-cyan-blue);
+}
+
+.button-cart img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
